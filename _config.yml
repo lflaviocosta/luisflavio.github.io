@@ -6,17 +6,20 @@ baseurl: '/PanelCV' #change it according to your repository name
 
 
 # Profile information
-yourname: Brown Smith  ## put your name
-title: 'GRAPHIC &amp; WEB DESIGNER'  ## your title
-location: San Francisco , CA
+yourname: Luis Flávio da Costa Terra  ## put your name
+title: ''  ## your title
+location: Itajubá, MG
 
 
 ## Social Profiles
-facebook: http://www.facebook.com  ## your facebook account url
+facebook: https://www.facebook.com/luisflavio.costa  ## your facebook account url
 twitter: http://www.twitter.com  ## your twitter account url
-linkedin: http://www.linkedin.com  ## your linkedin account url
+linkedin: https://www.linkedin.com/in/luis-fl%C3%A1vio-terra/  ## your linkedin account url
 dribbble: http://www.dribble.com  ## you dribbble account url
 foursquare: http://www.foursquare.com  ## your foursquare account url
+github: https://github.com/lflaviocosta
+google+: https://plus.google.com/u/0/113087114482182084559
+
 
 
 
