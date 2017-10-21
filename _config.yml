@@ -1,13 +1,13 @@
 
-title: My Resume
+title: Sobre mim
 url: 'http://junlulocky.com'
-baseurl: '/PanelCV' #change it according to your repository name
+baseurl: 'Luis Terra' #change it according to your repository name
 
 
 
 # Profile information
-yourname: Luis Flávio da Costa Terra  ## put your name
-title: ''  ## your title
+yourname: Luis Flávio Terra  ## put your name
+title: 'Graduando em Engenharia Mecânica Aeronáutica, Desenvolvedor Front-End'  ## your title
 location: Itajubá, MG
 
 
