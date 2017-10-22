@@ -64,29 +64,55 @@
 
 
                     <div id="contact-status"></div>
+                    <?php
+$action=$_REQUEST['action'];
+if ($action=="")    /* display the contact form */
+    {
+    ?>
 
-                    <form action="#" id="contactform">
+                    <form action="" method="POST" enctype="multipart/form-data">
                         <p class="form-group" id="contact-name">
-                            <label for="name">Seu nome</label>
-                            <input type="text" name="name" class="form-control name-contact" id="inputSuccess" placeholder="Name..." />
+                            <label for="action">Seu nome</label>
+                            <input name="action" value="submit" type="hidden"> Your name:<br>
                         </p>
                         <p class="form-group" id="contact-email"> 
-                            <label for="email">Seu email</label>
-                            <input type="text" name="email" class="form-control email-contact" id="inputSuccess" placeholder="Email..." />
+                            <label for="name">Seu email</label>
+                            <input name="name" size="30" type="text"><br> Your email:<br>
                         </p>
 
                         <p class="form-group" id="contact-message">
-                            <label for="message">Sua mensagem</label>
-                            <textarea name="message" cols="88" rows="6" class="form-control message-contact" id="inputError" placeholder="Message..."></textarea>
+                            <label for="email">Sua mensagem</label>
+                            <input name="email" size="30" type="text"><br> Sua mensagem:<br>
+                            <textarea name="message" cols="88" rows="6" ></textarea>
                         </p>
-                        <input type="reset" name="reset" value="CLEAR" class="reset">
-                        <input type="submit" name="submit" value="SEND MESSAGE" class="submit">
+                        <input value="Send email" type="submit">
+
 
                         <section class="button-demo" style="display: inline-block;">
                             <button class="ladda-button submit send_email" name="submit" data-color="green" data-style="expand-left">ENVIAR MENSAGEM</button>
                         </section>
 
+
                     </form>
+                    <?php
+    } 
+else                /* send the submitted data */
+    {
+    $name=$_REQUEST['name'];
+    $email=$_REQUEST['email'];
+    $message=$_REQUEST['message'];
+    if (($name=="")||($email=="")||($message==""))
+        {
+        echo "All fields are required, please fill <a href=\"\">the form</a> again.";
+        }
+    else{        
+        $from="From: $name<$email>\r\nReturn-path: $email";
+        $subject="Message sent using your contact form";
+        mail("youremail@yoursite.com", $subject, $message, $from);
+        echo "Email sent!";
+        }
+    }  
+?>
                 </div>
                 <!-- /Contact Form -->
             </div>
