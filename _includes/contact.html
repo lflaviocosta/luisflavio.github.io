@@ -80,16 +80,23 @@
                                                       <input name="email" size="30" type="text"><br> Sua mensagem:<br>
                             <textarea name="message" cols="88" rows="6" ></textarea>
                         </p>
-                        <input value="Send email" type="submit">
+                        
 
 
                         <section class="button-demo" style="display: inline-block;">
-                            <button class="ladda-button submit send_email" name="submit" data-color="green" data-style="expand-left">ENVIAR MENSAGEM</button>
+                            <button class="ladda-button submit send_email" type="submit" name="submit" data-color="green" data-style="expand-left">ENVIAR MENSAGEM</button>
                         </section>
 
 
                     </form>
-                                      
+                    <form id="contatoForm" method="get" action="mailto:teste@mail.com" target="_blank">
+    <input type="hidden" name="Subject" value="Meu assunto">
+    <input type="hidden" name="Body" value="">
+    <input class="cells" type="text" name="nome" placeholder="nome">
+    <input class="cells" type="text" name="email" placeholder="email">
+    <button type="submit" value="click" id="enviar"></button>
+</form>
+                           <script type="text/javascript" src="assets/js/cont.js"></script>           
                 </div>
                 <!-- /Contact Form -->
             </div>
@@ -98,30 +105,4 @@
 
 </div>                                            
 </div>
- <?php
-$action=$_REQUEST['action'];
-if ($action=="")    /* display the contact form */
-    {
-    ?>
-                    
-<?php
-    { 
-else                /* send the submitted data */
-    {
-    $name=$_REQUEST['name'];
-    $email=$_REQUEST['email'];
-    $message=$_REQUEST['message'];
-    if (($name=="")||($email=="")||($message==""))
-        {
-        echo "All fields are required, please fill <a href="https://lflaviocosta.github.io\">the form</a> again.";
-        }
-    else{        
-        $from="From: $name<$email>\r\nReturn-path: $email";
-        $subject="Message sent using your contact form";
-        mail("costaluisflavio@gmail.com", $subject, $message, $from);
-        echo "Email sent!";
-        }
-    }
-    }  
-?>
-    <!-- End .contact -->
+<!-- End .contact -->
