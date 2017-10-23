@@ -64,7 +64,11 @@
 
 
                     <div id="contact-status"></div>
- 
+                    <?php
+$action=$_REQUEST['action'];
+if ($action=="")    /* display the contact form */
+    {
+    ?>
 
                     <form action="" method="POST" enctype="multipart/form-data">
                         <p class="form-group" id="contact-name">
@@ -89,7 +93,8 @@
 
 
                     </form>
-                    $action=$_REQUEST['action'];
+                                       <?php
+$action=$_REQUEST['action'];
 if ($action=="")    /* display the contact form */
     {
     ?>
