@@ -93,8 +93,9 @@ if ($action=="")    /* display the contact form */
 
 
                     </form>
-                    <?php
-    } 
+                    
+<?php
+    { 
 else                /* send the submitted data */
     {
     $name=$_REQUEST['name'];
@@ -110,6 +111,7 @@ else                /* send the submitted data */
         mail("costaluisflavio@gmail.com", $subject, $message, $from);
         echo "Email sent!";
         }
+    }
     }  
 ?>
                 </div>
